@@ -124,11 +124,15 @@ class Beam:
             self.rct.move_ip(self.vx, self.vy)
             screen.blit(self.img, self.rct)
 
-class score:
-    def __init__(self):
+class Score:
+    def __init__(self,色):
         self.fonto = pg.font.SysFont("hgp創英角ポップ体", 30)
         self.img = self.fonto.render("表示させる文字列", 0, 色)
-        txt = fonto.render("Score", True, (0, 0, 255))
+        txt = self.fonto.render("Score", True, (0, 0, 255))
+        score = 0
+        self.img.center=(100,50)
+    def update(self, surface, screen):
+        screen.blit(self.img, self.rct)
 
 def main():
     pg.display.set_caption("たたかえ！こうかとん")
